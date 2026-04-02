@@ -1,13 +1,55 @@
-// src/components/public/PublicHeader.tsx
 "use client";
-import Link from "next/link";
-import { Phone } from "lucide-react";
 
-export function PublicHeader() {
+import { useEffect, useState } from "react";
+import { usePortfolioStore } from "@/store/portfolio";
+
+const NAV_LINKS = [
+  { label: "Home", href: "#home" },
+  { label: "About", href: "#about" },
+  { label: "Services", href: "#services" },
+  { label: "Portfolio", href: "#portfolio" },
+  { label: "Resume", href: "#resume" },
+  { label: "Contact", href: "#contact" },
+];
+
+export default function Navbar() {
+  const { activeSection, setActiveSection } = usePortfolioStore();
+  const [scrolled, setScrolled] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  // IntersectionObserver watches each section and fires a callback whenever
+  // a section enters/exits the viewport. This is much more performant than
+  // a scroll event listener + getBoundingClientRect() on every scroll event.
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id);
+          }
+        });
+      },
+      // threshold: 0.4 means the callback fires when 40% of the section is visible
+      { threshold: 0.4 }
+    );
+
+    const sections = document.querySelectorAll("section[id]");
+    sections.forEach((s) => observer.observe(s));
+
+    // Cleanup: always disconnect observers when the component unmounts
+    // to prevent memory leaks.
+    return () => observer.disconnect();
+  }, [setActiveSection]);
+
+  // Separate scroll listener just for the navbar background blur effect
+  useEffect(() => {
+    const handleScroll = () => setScrolled(window.scrollY > 20);
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <header className="sticky top-0 z-50 bg-waku-green shadow-md"
-      style={{ paddingTop: "env(safe-area-inset-top, 0px)" }}>
-         <nav
+    <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
           ? "bg-[#0a0a0a]/90 backdrop-blur-md border-b border-white/5 shadow-lg"
@@ -82,6 +124,5 @@ export function PublicHeader() {
         </div>
       )}
     </nav>
-    </header>
   );
 }

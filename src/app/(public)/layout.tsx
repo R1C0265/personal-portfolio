@@ -4,14 +4,15 @@
 import { PublicHeader } from "@/components/public/PublicHeader";
 import { BottomNav }    from "@/components/public/BottomNav";
 import { AuthHydrator } from "@/components/layout/AuthHydrator";
+import { Providers }    from "@/components/layout/Providers";
 
 export default function PublicLayout({ children }: { children: React.ReactNode }) {
   return (
-    <>
+    <Providers>
       <AuthHydrator />
       <PublicHeader />
       <main className="has-bottom-nav">{children}</main>
       <BottomNav />
-    </>
+    </Providers>
   );
 }

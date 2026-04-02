@@ -2,7 +2,6 @@
 import type { Metadata, Viewport } from "next";
 import { Playfair_Display, DM_Sans } from "next/font/google";
 import "./globals.css";
-import { Providers } from "@/components/layout/Providers";
 import { Toaster } from "sonner";
 
 // next/font self-hosts fonts — no external request at runtime.
@@ -22,41 +21,25 @@ const dmSans = DM_Sans({
 
 export const metadata: Metadata = {
   title: {
-    default:  "Waku Limited — Your Trusted Agro Dealer",
-    template: "%s | Waku Limited",
+    default:  "Eric Kabambe — Full Stack Developer",
+    template: "%s | Eric Kabambe",
   },
-  description:
-    "Quality day-old chicks, growers and layers in Lilongwe, Malawi. " +
-    "Mikolongwe & Kuroiler breeds. Order by phone, WhatsApp or online.",
-  keywords: ["chicks", "poultry", "Lilongwe", "Malawi", "agro dealer", "Kuroiler"],
+  description: "Full stack developer, freelancer, and open source contributor.",
 };
 
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
   maximumScale: 5,
-  themeColor: "#1A4D2E",
+  themeColor: "#0a0a0a",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={`${playfair.variable} ${dmSans.variable}`}>
-      <body className="font-body antialiased bg-waku-cream">
-        <Providers>
-          {children}
-          <Toaster
-            position="bottom-center"
-            richColors
-            closeButton
-            toastOptions={{
-              style: {
-                fontFamily: "var(--font-body)",
-                fontSize: "15px",
-                marginBottom: "80px", // clears mobile bottom nav
-              },
-            }}
-          />
-        </Providers>
+      <body className="font-body antialiased bg-[#0a0a0a]">
+        {children}
+        <Toaster position="bottom-center" richColors closeButton />
       </body>
     </html>
   );
