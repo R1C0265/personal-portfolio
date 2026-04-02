@@ -115,6 +115,38 @@ model ContactMessage {
   updatedAt   DateTime       @updatedAt
 }
 
+// ─── INQUIRY ───────────────────────────────────────────────────────────────────
+// Product inquiries from the order form
+
+model Inquiry {
+  id              String         @id @default(cuid())
+  customerName    String
+  customerEmail   String
+  customerPhone   String?
+  productId       String
+  quantity        Int
+  preferredContact String?
+  message         String         @db.Text
+  status          MessageStatus  @default(NEW)
+  isRead          Boolean        @default(false)
+  repliedAt       DateTime?
+  createdAt       DateTime       @default(now())
+  updatedAt       DateTime       @updatedAt
+  notes           Note[]
+}
+
+// ─── NOTE ──────────────────────────────────────────────────────────────────────
+// Notes on inquiries
+
+model Note {
+  id          String   @id @default(cuid())
+  inquiryId   String
+  inquiry     Inquiry  @relation(fields: [inquiryId], references: [id], onDelete: Cascade)
+  content     String   @db.Text
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
 // ─── SOCIAL LINK ───────────────────────────────────────────────────────────────
 // Your social media and professional links
 

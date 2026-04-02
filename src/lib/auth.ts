@@ -2,6 +2,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import jwt from "jsonwebtoken";
 import { cookies } from "next/headers";
+import { db } from "./db";
 
 export interface JwtPayload {
   id: string;

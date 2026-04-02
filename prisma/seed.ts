@@ -1,5 +1,5 @@
 // prisma/seed.ts  — run with: npm run db:seed
-import { PrismaClient } from "@prisma/client";
+import { PrismaClient, SkillCategory, ProficiencyLevel } from "@prisma/client";
 import bcrypt from "bcryptjs";
 
 const db = new PrismaClient();
@@ -93,11 +93,11 @@ async function main() {
   }
 
   const skills = [
-    { name: "TypeScript", category: "FULL_STACK", proficiency: "EXPERT", yearsOfExperience: 4, sortOrder: 1 },
-    { name: "React", category: "FRONTEND", proficiency: "EXPERT", yearsOfExperience: 4, sortOrder: 2 },
-    { name: "Node.js", category: "BACKEND", proficiency: "ADVANCED", yearsOfExperience: 5, sortOrder: 3 },
-    { name: "Prisma", category: "DATABASE", proficiency: "ADVANCED", yearsOfExperience: 3, sortOrder: 4 },
-    { name: "Docker", category: "DEVOPS", proficiency: "INTERMEDIATE", yearsOfExperience: 2, sortOrder: 5 },
+    { name: "TypeScript", category: SkillCategory.FULL_STACK, proficiency: ProficiencyLevel.EXPERT, yearsOfExperience: 4, sortOrder: 1 },
+    { name: "React", category: SkillCategory.FRONTEND, proficiency: ProficiencyLevel.EXPERT, yearsOfExperience: 4, sortOrder: 2 },
+    { name: "Node.js", category: SkillCategory.BACKEND, proficiency: ProficiencyLevel.ADVANCED, yearsOfExperience: 5, sortOrder: 3 },
+    { name: "Prisma", category: SkillCategory.DATABASE, proficiency: ProficiencyLevel.ADVANCED, yearsOfExperience: 3, sortOrder: 4 },
+    { name: "Docker", category: SkillCategory.DEVOPS, proficiency: ProficiencyLevel.INTERMEDIATE, yearsOfExperience: 2, sortOrder: 5 },
   ];
 
   for (const s of skills) {
