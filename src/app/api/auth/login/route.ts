@@ -16,7 +16,7 @@ export async function POST(req: NextRequest) {
     const { email, password } = parsed.data;
 
     const user = await db.user.findUnique({ where: { email: email.toLowerCase() } });
-    if (!user || !user.isActive) {
+    if (!user) {
       return NextResponse.json({ error: "Invalid email or password." }, { status: 401 });
     }
 
@@ -25,8 +25,8 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: "Invalid email or password." }, { status: 401 });
     }
 
-    const payload = { id: user.id, email: user.email, role: user.role, firstName: user.firstName, lastName: user.lastName };
-    const token   = signToken(payload as any);
+    const payload = { id: user.id, email: user.email };
+    const token   = signToken(payload);
 
     const response = NextResponse.json({ message: "Logged in.", user: payload });
     setAuthCookie(response, token);

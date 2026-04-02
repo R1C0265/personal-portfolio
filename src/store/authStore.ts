@@ -2,7 +2,7 @@
 "use client";
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
-import type { AuthUser, UserRole } from "@/types";
+import type { AuthUser } from "@/types";
 
 interface AuthState {
   user:       AuthUser | null;
@@ -19,21 +19,16 @@ export const useAuthStore = create<AuthState>()(
       isLoading:  true,
       setUser:    (user)      => set({ user, isLoading: false }),
       setLoading: (isLoading) => set({ isLoading }),
-      logout:     ()          => {
+      logout:     () => {
         set({ user: null, isLoading: false });
-        if (typeof window !== "undefined") localStorage.removeItem("waku-auth");
+        if (typeof window !== "undefined") localStorage.removeItem("portfolio-auth");
       },
     }),
     {
-      name:       "waku-auth",
+      name:       "portfolio-auth",
       partialize: (s) => ({ user: s.user }),
     }
   )
 );
 
-export const useCurrentUser  = () => useAuthStore((s) => s.user);
-export const useIsAdmin      = () => {
-  const r = useAuthStore((s) => s.user?.role);
-  return r === "ADMIN" || r === "SUPER_ADMIN";
-};
-export const useIsSuperAdmin = () => useAuthStore((s) => s.user?.role === "SUPER_ADMIN");
+export const useCurrentUser = () => useAuthStore((s) => s.user);

@@ -9,10 +9,10 @@ export async function GET(req: NextRequest) {
 
   const user = await db.user.findUnique({
     where:  { id: auth.id },
-    select: { id: true, email: true, firstName: true, lastName: true, phone: true, role: true, isActive: true },
+    select: { id: true, email: true },
   });
 
-  if (!user || !user.isActive) {
+  if (!user) {
     const res = NextResponse.json({ error: "Account not found." }, { status: 401 });
     res.cookies.delete("token");
     return res;
