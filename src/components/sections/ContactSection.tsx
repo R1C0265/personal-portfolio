@@ -1,7 +1,15 @@
 "use client";
 
 import { useState } from "react";
-import { contactSchema, type ContactFormData } from "@/lib/schemas";
+import { z } from "zod";
+
+const contactSchema = z.object({
+  name:    z.string().min(2, "Name is required"),
+  email:   z.string().email("Enter a valid email"),
+  subject: z.string().min(2, "Subject is required"),
+  message: z.string().min(10, "Message is too short"),
+});
+type ContactFormData = z.infer<typeof contactSchema>;
 
 // Initial empty form state — typed against our Zod-inferred type
 const INITIAL_FORM: ContactFormData = {
