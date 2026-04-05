@@ -8,7 +8,7 @@ const PROJECTS = [
     category: "CRM + Website",
     description:
       "Full-stack website and CRM system for a Lilongwe-based poultry/agro dealer. Customer management, inventory tracking, and order processing.",
-    tags: ["Next.js 14", "Prisma", "MySQL", "Tailwind"],
+    tags: ["React.js","Next.js 14","Tailwind", "Node.js","Prisma", "PostgreSQL" ],
     image:
       "https://images.unsplash.com/photo-1500595046743-cd271d694d30?w=600&q=80&fit=crop",
     live: "#",
@@ -19,7 +19,7 @@ const PROJECTS = [
     category: "Healthcare / Non-profit",
     description:
       "Donor management platform for Queen Elizabeth Central Hospital. Tracks donations, campaigns, and donor communications.",
-    tags: ["Next.js 14", "Node.js", "Cloudinary", "JWT"],
+    tags: ["React.js","Next.js 14","Tailwind", "Node.js","Prisma", "PostgreSQL" ],
     image:
       "https://images.unsplash.com/photo-1516549655169-df83a0774514?w=600&q=80&fit=crop",
     live: "#",
@@ -30,7 +30,7 @@ const PROJECTS = [
     category: "POS + Inventory",
     description:
       "Laravel-based furniture inventory and point-of-sale system with multi-image uploads, cashout flow, and sales reporting.",
-    tags: ["Laravel", "Bootstrap", "MySQL", "JavaScript"],
+    tags: [ "Bootstrap","JavaScript", "MySQL", "Laravel",],
     image:
       "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=600&q=80&fit=crop",
     live: "#",
@@ -41,7 +41,7 @@ const PROJECTS = [
     category: "E-Commerce + CMS",
     description:
       "E-commerce website and content management system for a retail fashion client with integrated inventory management and financial reporting.",
-    tags: ["CMS", "E-Commerce", "MySQL", "JavaScript"],
+    tags: ["React.js","Next.js 14","Tailwind", "Node.js","Prisma", "PostgreSQL", ],
     image:
       "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=600&q=80&fit=crop",
     live: "https://trendythreads.kesug.com",
@@ -51,7 +51,7 @@ const PROJECTS = [
     category: "Government Platform",
     description:
       "Government-compliant web platform for the Office of Director of Public Officers' Declarations with role-based authentication and encrypted data storage.",
-    tags: ["Next.js", "JWT", "MySQL", "Encryption"],
+    tags: ["Bootstrap", "jQuery",  "PHP",  "MySQL",],
     image:
       "https://images.unsplash.com/photo-1568234928966-359c35dd8327?w=600&q=80&fit=crop",
     live: "https://declarations.gov.mw",
