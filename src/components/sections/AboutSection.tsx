@@ -93,7 +93,7 @@ export default function AboutSection() {
             <div className="flex items-center gap-5 mb-8 pb-8 border-b border-white/10">
               <div className="relative w-20 h-20 rounded-xl overflow-hidden ring-2 ring-blue-500/30 flex-shrink-0">
                 <Image
-                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&q=80&fit=crop&crop=face"
+                  src="/images/dp.png"
                   alt="Eric Kabambe"
                   fill
                   className="object-cover"
@@ -109,10 +109,10 @@ export default function AboutSection() {
             {/* Contact Info */}
             <div className="grid grid-cols-1 gap-3 mb-8 pb-8 border-b border-white/10">
               {[
-                { label: "Email", value: "eric@r1co.dev" },
-                { label: "Phone", value: "+265 xxx xxx xxx" },
+                { label: "Email", value: "ericzkabambe@gmail.com" },
+                { label: "Phone", value: "+265 997 835 428 / +265 888 701 736" },
                 { label: "Location", value: "Blantyre, Malawi" },
-                { label: "Profile", value: "R1C0 Digital Solutions" },
+                { label: "Profile", value: "Palm Technologies" },
               ].map(({ label, value }) => (
                 <div key={label} className="flex gap-2">
                   <span className="text-white/40 text-sm w-20 flex-shrink-0">
@@ -145,7 +145,7 @@ export default function AboutSection() {
 
             <p className="text-white/60 leading-relaxed">
               I&apos;m a freelance full-stack developer operating under{" "}
-              <strong className="text-white/80">R1C0 Digital Solutions</strong>.
+              <strong className="text-white/80">Palm Technologies</strong>.
               With ~3 years of hands-on experience across web development and
               systems administration, I build fast, mobile-first applications
               tailored to real business needs.
@@ -153,15 +153,15 @@ export default function AboutSection() {
 
             <p className="text-white/60 leading-relaxed">
               My stack centers on{" "}
-              <strong className="text-white/80">Next.js 14, Node.js, Prisma, and MySQL</strong> —
-              proven in production across clients like Waku Limited and Queen
-              Elizabeth Central Hospital. I care deeply about code quality,
+              <strong className="text-white/80"> React.js + Next.js 14, Node.js, Prisma, and PostgreQL or MongoDB. </strong>
+              Additionally i have proven expirience working with <strong className="text-white/80"> Bootstrap with  Laravel or SpringBoot backends working with MySQL.</strong>
+              — Proven in production across clients like ODPOD and Trendy Threads. I care deeply about code quality,
               performance on 3G/4G networks, and building systems that actually
               get used.
             </p>
 
             <p className="text-white/60 leading-relaxed">
-              Longer term, I&apos;m transitioning R1C0 Digital Solutions into a SaaS
+              Longer term, I&apos;m transitioning Palm Technologies into a SaaS
               business — targeting a Malawian market I know is underserved.
             </p>
 
@@ -189,10 +189,10 @@ export default function AboutSection() {
                 href="#contact"
                 className="px-6 py-2.5 bg-blue-500 hover:bg-blue-400 text-white text-sm font-medium rounded-full transition-all duration-200 hover:-translate-y-0.5"
               >
-                Hire Me
+                Want to Talk?
               </a>
               <a
-                href="/cv.pdf"
+                href="/resume/Eric_Kabambe_CV_IT_Infrasctructure_Trainee.pdf"
                 target="_blank"
                 className="px-6 py-2.5 border border-white/20 hover:border-white/40 text-white/70 hover:text-white text-sm font-medium rounded-full transition-all duration-200 hover:-translate-y-0.5"
               >

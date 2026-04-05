@@ -100,8 +100,8 @@ export default function ContactSection() {
 
             <div className="flex flex-col gap-4">
               {[
-                { label: "Email", value: "eric@r1co.dev" },
-                { label: "Phone", value: "+265 xxx xxx xxx" },
+                { label: "Email", value: "ericzkabambe@gmail.com" },
+                { label: "Phone", value: "+265 997 835 428 / +265 888 701 736" },
                 { label: "Location", value: "Blantyre / Lilongwe, Malawi" },
               ].map(({ label, value }) => (
                 <div

@@ -62,7 +62,7 @@ export default function Navbar() {
           href="#home"
           className="text-white font-bold text-xl tracking-tight font-display"
         >
-          Dev<span className="text-blue-400">Folio</span>
+          Powered by <span className="text-blue-400">Palm Tech.</span>
         </a>
 
         {/* Desktop Links */}

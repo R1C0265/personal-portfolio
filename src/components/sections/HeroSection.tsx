@@ -62,7 +62,7 @@ export default function HeroSection() {
   // Using ?sig= with a fixed number ensures the image stays consistent
   // across renders instead of changing on every page load.
   const heroImageUrl =
-    "https://images.unsplash.com/photo-1544717305-2782549b5136?w=1920&q=80&fit=crop";
+    "https://images.unsplash.com/photo-1571171637578-41bc2dd41cd2?w=1920&q=80&fit=crop";
 
   return (
     <section
