@@ -5,9 +5,9 @@ import { useEffect, useState } from "react";
 // The strings the typewriter cycles through
 const TYPED_STRINGS = [
   "Full Stack Developer",
-  "Freelancer",
+  "Software Engineer",
   "Open Source Contributor",
-  "Problem Solver",
+  "Real-World Problem Solver",
 ];
 
 // Custom hook that handles the typewriter logic.

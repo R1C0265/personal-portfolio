@@ -192,7 +192,7 @@ export default function AboutSection() {
                 Want to Talk?
               </a>
               <a
-                href="/resume/Eric_Kabambe_CV_IT_Infrasctructure_Trainee.pdf"
+                href="/resume/Eric_Kabambe_CV.pdf"
                 target="_blank"
                 className="px-6 py-2.5 border border-white/20 hover:border-white/40 text-white/70 hover:text-white text-sm font-medium rounded-full transition-all duration-200 hover:-translate-y-0.5"
               >

@@ -154,7 +154,7 @@ export default function ResumeSection() {
 
         <div className="text-center mt-14">
           <a
-            href="/resume/Eric_Kabambe_CV_IT_Infrasctructure_Trainee.pdf"
+            href="/resume/Eric_Kabambe_CV.pdf"
             target="_blank"
             download
             className="inline-flex items-center gap-2 px-8 py-3 border border-blue-500/40 hover:border-blue-500 text-blue-400 hover:text-blue-300 font-medium rounded-full transition-all duration-200 hover:-translate-y-0.5 text-sm"
